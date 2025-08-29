@@ -1,0 +1,34 @@
+version: 2
+
+sources:
+  - name: northwind
+    schema: erp_northwind
+    description: "Fonte de dados do ERP."
+    tables:
+
+      - name: products
+        description: "Tabela de produtos."
+
+      - name: employees
+        description: "Tabela de funcionários."
+        
+      - name: customers
+        description: "Tabela de clientes."
+
+      - name: orders
+        description: "Tabela de pedidos."
+
+      - name: order_details
+        description: "Tabela de detalhes dos itens dos pedidos."
+
+      - name: shippers
+        description: "Tabela de transportadoras."
+
+      - name: suppliers
+        description: "Tabela de fornecedores."
+
+      - name: categories
+        description: "Tabela de categorias de produtos."
+
+      - name: territories
+        description: "Tabela de territórios de vendas."
