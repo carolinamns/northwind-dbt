@@ -1,0 +1,53 @@
+version: 2
+
+models:
+  - name: dim_employees
+    description: Esta é a tabela dimensão funcionário da northwind. Ela contém informações sobre os funcionários da empresa e sua estrutura hierárquica.
+    columns:
+      - name: employee_sk
+        description: A chave surrogate da dimensão. Deve ser única.
+        data_tests:
+          - unique
+          - not_null
+
+      - name: employee_id
+        description: A chave natural do funcionário.
+
+      - name: manager_id
+        description: A chave natural do gestor ao qual o funcionário reporta.
+
+      - name: first_name
+        description: Primeiro nome do funcionário.
+
+      - name: last_name
+        description: Sobrenome do funcionário.
+
+      - name: full_name
+        description: Nome completo do funcionário.
+
+      - name: manager_full_name
+        description: Nome completo do gestor do funcionário.
+
+      - name: birth_date
+        description: Data de nascimento do funcionário.
+
+      - name: hire_date
+        description: Data de contratação do funcionário.
+
+      - name: address
+        description: Endereço completo do funcionário.
+
+      - name: city
+        description: Cidade onde o funcionário reside.
+
+      - name: region
+        description: Região/estado do funcionário.
+
+      - name: postal_code
+        description: Código postal do endereço.
+
+      - name: country
+        description: País do funcionário.
+
+      - name: notes
+        description: Observações e informações adicionais sobre o funcionário.

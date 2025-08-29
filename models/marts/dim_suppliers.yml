@@ -1,0 +1,39 @@
+version: 2
+
+models:
+  - name: dim_suppliers
+    description: Esta é a tabela dimensão fornecedor da northwind. Ela contém informações sobre os fornecedores.
+    columns:
+      - name: supplier_sk
+        description: A chave surrogate da dimensão. Deve ser única.
+        data_tests:
+          - unique
+          - not_null
+
+      - name: supplier_id
+        description: A chave natural do fornecedor.
+        data_tests:
+          - not_null
+
+      - name: company_name
+        description: Nome da empresa fornecedora.
+        data_tests:
+          - not_null
+
+      - name: contact_name
+        description: Nome do contato do fornecedor.
+
+      - name: address
+        description: Endereço completo do fornecedor.
+
+      - name: city
+        description: Cidade do fornecedor.
+
+      - name: region
+        description: Região/estado do fornecedor.
+
+      - name: postal_code
+        description: Código postal do fornecedor.
+
+      - name: country
+        description: País do fornecedor.

@@ -1,0 +1,81 @@
+version: 2
+
+models:
+  - name: fct_order_detail
+    description: Esta é a tabela fato de detalhes de pedidos da Northwind. Contém as medidas dos itens de pedidos com suas chaves estrangeiras para as dimensões.
+    columns:
+      - name: order_id
+        description: ID natural do pedido.
+        data_tests:
+          - not_null
+
+      - name: employee_fk
+        description: Chave estrangeira para a dimensão de funcionários.
+        data_tests:
+          - relationships:
+              arguments:
+                to: ref('dim_employees')
+                field: employee_sk
+
+      - name: customer_fk
+        description: Chave estrangeira para a dimensão de clientes.
+        data_tests:
+          - relationships:
+              arguments:
+                to: ref('dim_customers')
+                field: customer_sk
+
+      - name: shipper_fk
+        description: Chave estrangeira para a dimensão de transportadoras.
+        data_tests:
+          - relationships:
+              arguments:
+                to: ref('dim_shippers')
+                field: shipper_sk
+
+      - name: product_fk
+        description: Chave estrangeira para a dimensão de produtos.
+        data_tests:
+          - relationships:
+              arguments:
+                to: ref('dim_products')
+                field: product_sk
+
+      - name: order_date
+        description: Data em que o pedido foi realizado.
+
+      - name: ship_region
+        description: Região de entrega do pedido.
+
+      - name: shipped_date
+        description: Data em que o pedido foi enviado.
+
+      - name: ship_country
+        description: País de destino do pedido.
+
+      - name: ship_name
+        description: Nome do destinatário do pedido.
+
+      - name: ship_postal_code
+        description: Código postal de entrega.
+
+      - name: ship_city
+        description: Cidade de entrega do pedido.
+
+      - name: freight
+        description: Valor do frete do pedido.
+
+      - name: ship_address
+        description: Endereço completo de entrega.
+
+      - name: required_date
+        description: Data de entrega requerida pelo cliente.
+
+      - name: discount
+        description: Percentual de desconto aplicado no item do pedido.
+
+      - name: unit_price
+        description: Preço unitário do produto no momento do pedido.
+
+      - name: quantity
+        description: Quantidade do produto no pedido.

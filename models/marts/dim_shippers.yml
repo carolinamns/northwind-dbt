@@ -1,0 +1,24 @@
+version: 2
+
+models:
+  - name: dim_shippers
+    description: Esta é a tabela dimensão transportadora da northwind. Ela contém informações sobre as transportadoras.
+    columns:
+      - name: shipper_sk
+        description: A chave surrogate da dimensão. Deve ser única.
+        data_tests:
+          - unique
+          - not_null
+
+      - name: shipper_id
+        description: A chave natural da transportadora.
+        data_tests:
+          - not_null
+
+      - name: company_name
+        description: Nome da empresa transportadora.
+        data_tests:
+          - not_null
+
+      - name: phone
+        description: Telefone de contato da transportadora.

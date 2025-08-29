@@ -1,0 +1,44 @@
+version: 2
+ 
+models:
+  - name: dim_customers
+    description: Esta é a tabela dimensão cliente da northwind. Ela contém informações sobre os clientes da empresa.
+    columns:
+      - name: customer_sk
+        description: A chave surrogate da dimensão. Deve ser única.
+        data_tests:
+          - unique
+          - not_null
+
+      - name: customer_id
+        description: A chave natural do cliente.
+
+      - name: country
+        description: País do cliente.
+
+      - name: city
+        description: Cidade do cliente.
+
+      - name: fax
+        description: Número de fax do cliente.
+
+      - name: postal_code
+        description: Código postal do cliente.
+
+      - name: address
+        description: Endereço completo do cliente.
+
+      - name: region
+        description: Região/estado do cliente.
+
+      - name: contact_name
+        description: Nome do contato do cliente.
+
+      - name: phone
+        description: Telefone do cliente.
+
+      - name: company_name
+        description: Nome da empresa do cliente.
+
+      - name: contact_title
+        description: Cargo do contato na empresa.

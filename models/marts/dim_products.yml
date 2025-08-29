@@ -1,0 +1,42 @@
+version: 2
+
+models:
+  - name: dim_products
+    description: Esta é a tabela dimensão produto da northwind. Ela contém informações sobre os produtos da empresa.
+    columns:
+      - name: product_sk
+        description: A chave surrogate da dimensão. Deve ser única.
+        data_tests:
+          - unique
+          - not_null
+
+      - name: product_id
+        description: A chave natural do produto.
+
+      - name: product_name
+        description: Nome do produto
+
+      - name: units_in_stock
+        description: Total de unidades em estoque de um determinado produto.
+
+      - name: category_id
+        description: A chave natural da categoria do produto.
+
+      - name: unit_price
+        description: O preço unitário do produto (mais recente)
+
+      - name: reorder_level
+        description: Ponte de re-estocage do produto
+
+      - name: supplier_id
+        description: A chave natural do forncedor
+
+      - name: units_on_order
+        description: Quantidade mínima por pedido
+
+      - name: is_discontinued
+        description: Binário. Se o produto foi descontinuado.
+        data_tests:
+          - accepted_values:
+              arguments:
+                values: ['No', 'Yes']
